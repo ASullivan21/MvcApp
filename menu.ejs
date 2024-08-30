@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cocktail Menu</title>
+</head>
+<body>
+  <h1>Cocktail Menu</h1>
+  <ul>
+    <% menu.forEach(cocktail => { %>
+      <li>
+        <%= cocktail.name %>
+        <form action="/place-order" method="post">
+          <input type="hidden" name="cocktailId" value="<%= cocktail.id %>">
+          <button type="submit">Order</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
